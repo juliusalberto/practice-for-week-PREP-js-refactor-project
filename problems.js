@@ -11,6 +11,9 @@ function plusFive(num) {
     return num + 5;
 }
 
+function plusTen(num) {
+    return num + 10;
+}
 
 /*
     Original:
@@ -27,6 +30,17 @@ function printFives(max) {
             console.log(i);
         }
     }
+}
+
+function returnSevens(max) {
+    
+    let arraySevens = []
+
+    for (let index = 0; index < max; index += 7) {
+        arraySevens.push(index);
+    }
+    
+    return arraySevens;
 }
 
 
@@ -47,6 +61,9 @@ function eitherStringIncluded(sentence, word1, word2) {
     return sentence.includes(word1) || sentence.includes(word2);
 }
 
+function bothStringsIncluded(sentence, word1, word2) {
+    return sentence.includes(word1) && sentence.includes(word2);
+}
 
 /*
     Original:
@@ -66,6 +83,16 @@ function sumArray(arr) {
     return sum;
 }
 
+function productArray(arr) {
+    let product = 1;
+
+    arr.forEach(element => {
+        product = product * element;
+    });
+
+    return product;
+}
+
 
 /*
     Original:
@@ -78,6 +105,10 @@ function sumArray(arr) {
 */
 function threeOrSeven(num) {
     return num % 3 === 0 || num % 7 === 0;
+}
+
+function fiveAndEleven(num) {
+    return num % 5 === 0 && num % 11 === 0;
 }
 
 
@@ -101,6 +132,23 @@ function countVowels(word) {
     return count;
 }
 
+function countConsonants(word) {
+    const vowels = ["a", "e", "i", "o", "u"];
+    let countVowels = 0;
+    let space = 0;
+
+    word = word.toLowerCase();
+
+    for (let index = 0; index < word.length; index++) {
+        if (vowels.includes(word[index])) {
+            countVowels++;
+        } else if (word[index] == " ") {
+            space++;
+        }
+        
+    }
+    return word.length - countVowels - space;
+}
 
 /*
     Original:
@@ -122,6 +170,21 @@ function whisper(str) {
     return str.toLowerCase();
 }
 
+function alternatingLetters(str) {
+    stringArray = str.split('')
+
+    for (let index = 0; index < stringArray.length; index++) {
+        const element = stringArray[index];
+        if (index % 2 === 0) {
+            stringArray[index] = element.toLowerCase();
+        } else {
+            stringArray[index] = element.toUpperCase();
+        }
+    }
+
+    return stringArray.join('');
+
+}
 
 module.exports = {
     plusTen,
